@@ -1,7 +1,7 @@
 
-function addUsers() {
+function getUsers() {
   var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
+  xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("jsondata").innerHTML = this.responseText;
     }
@@ -10,18 +10,31 @@ function addUsers() {
   xhttp.send();
 }
 
+function XMLHttpRequest() {
+  //
+  //
+  //
+  this.onreadystatechange = function() {
+    
+  }
+}
+
 
 // function makeTable() {
 
 
+function user(name, email) {
 
-// var col = [];
-// for (var i = 0; i < jd.length; i++) {
-//     for (var key in jd[i]) {
-//         if (col.indexOf(key) === -1) {
-//             col.push(key);
-//         }
-//     }
+  this.user = name;
+  this.email = email;
 
-//   }
-// }
+  this.getUser = function () {
+    return this.user
+  }
+}
+var user1 = new user("gopi", "gmail")
+var user2 = new user("ak", "gmail")
+console.log(user1);
+console.log(user2);
+var userName = user1.getUser();
+console.log(userName)
