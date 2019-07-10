@@ -3,8 +3,8 @@ function getUsers() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      makeTable(this.responseText)
-      JSON.parse(this.responseText)
+      makeTable(JSON.parse(this.responseText))
+      // JSON.parse(this.responseText)
     }
   };
   xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
@@ -12,11 +12,18 @@ function getUsers() {
 }
 
 function makeTable(data) {
-  console.log(data);
+  
   var tbody = '';
+  
+  console.log(data[1]);
   // var td = document.getElementById("tabledata").innerHTML
   for (var i = 0; i < data.length; i++) {
-    tbody=tbody+"<tr><td></td><td></td><td>data.title[i]</td><td>data.body[i]</td></tr>"          
+    for(var j =0;j<data.length;j++){
+      data.innerHTML = array[i][j];
+    }
+  
+  tbody=tbody+"<tr><td>data[0]</td><td>data[0]</td><td>data[0]</td><td>data[0]</td></tr>"
+        
   }
         document.getElementById("tabledata").innerHTML = tbody;
 }
