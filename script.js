@@ -22,7 +22,7 @@ function makeTable(data) {
       data.innerHTML = array[i][j];
     }
   
-  tbody=tbody+"<tr><td>data[0]</td><td>data[0]</td><td>data[0]</td><td>data[0]</td></tr>"
+  tbody=tbody+"<tr><td>"+data[i].userId+"</td><td>"+data[i].id+"</td><td>"+data[i].title+"</td><td>"+data[i].body+"</td></tr>"
         
   }
         document.getElementById("tabledata").innerHTML = tbody;
