@@ -18,18 +18,19 @@ function makeTable(data) {
   console.log(data[1]);
   // var td = document.getElementById("tabledata").innerHTML
   for (var i = 0; i < data.length; i++) {
-    for(var j =0;j<data.length;j++){
-      data.innerHTML = array[i][j];
-    }
   
-  tbody=tbody+"<tr><td>data[0]</td><td>data[0]</td><td>data[0]</td><td>data[0]</td></tr>"
+  tbody=tbody+"<tr><td>"+data[i].userId+"</td><td>"+data[i].id+"</td><td>"+data[i].title+"</td><td>"+data[i].body+"</td></tr>"
         
   }
         document.getElementById("tabledata").innerHTML = tbody;
+
 }
-
-
-
+for (var j = 0; j < data.length; j++) {
+  var srch = document.getElementById("serch").innerHTML
+  const result = data.filter(data => data[j].userId > 6);
+tbody=tbody+"<tr><td>"+data[i].userId+"</td><td>"+data[i].id+"</td><td>"+data[i].title+"</td><td>"+data[i].body+"</td></tr>"
+}  
+console.log(result);
 
 
 
