@@ -3,7 +3,8 @@ function getUsers() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      makeTable(JSON.parse(this.responseText))
+      users = JSON.parse(this.responseText)
+      makeTable(users)
       // JSON.parse(this.responseText)
     }
   };
@@ -14,8 +15,6 @@ function getUsers() {
 function makeTable(data) {
   
   var tbody = '';
-  
-  console.log(data[1]);
   // var td = document.getElementById("tabledata").innerHTML
   for (var i = 0; i < data.length; i++) {
   
@@ -25,12 +24,18 @@ function makeTable(data) {
         document.getElementById("tabledata").innerHTML = tbody;
 
 }
-for (var j = 0; j < data.length; j++) {
-  var srch = document.getElementById("serch").innerHTML
-  const result = data.filter(data => data[j].userId > 6);
-tbody=tbody+"<tr><td>"+data[i].userId+"</td><td>"+data[i].id+"</td><td>"+data[i].title+"</td><td>"+data[i].body+"</td></tr>"
-}  
-console.log(result);
+function filterFunction() {
+ var filterUsers=[];
+ var searchValue = document.getElementById("myInput").value;
+ console.log(searchValue)
+  for (var i=0;i < users.length;i++)  {
+    if(users[i].userId == searchValue){
+      filterUsers.push(users[i])
+    }
+  }
+  console.log(filterUsers);
+  makeTable(filterUsers)
+}
 
 
 

@@ -1,7 +1,7 @@
 
 th, td, p, input 
 {
-    font:14px Verdana;}
+    font:25px Verdana;}
 
 table, th, td 
 {
@@ -9,7 +9,11 @@ table, th, td
     border-collapse: collapse;
     padding: 2px 3px;
     text-align: center;
+
 }
 th {
     font-weight:bold;
 }
+table, th, td {
+    border: 1px solid rgb(31, 11, 148);
+  }

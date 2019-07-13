@@ -5,19 +5,17 @@
 </head>
 
 <body onload="getUsers()">
-  <input type="text" id = "serch"  placeholder="Search..">
-<table border="1">
+  <input type="number" id="myInput" onkeyup="filterFunction()" 
+  placeholder="Search for user ids.." title="Type in a name">
+<table border = "1" bgcolor="#FFF44F">
   <thead>
-<th>
-<td>userId</td>
+<td>userId  </td>
 <td>id</td>
 <td>title</td>
 <td>body</td>
-
-</th>
-  </thead>
+</thead>
   <tbody id = "tabledata">
-<tr>
+<tr bgcolor="#FF0000" >
   <td>1111</td>
   <td>dgc</td>
   <td>xyz</td>
